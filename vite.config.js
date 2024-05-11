@@ -13,4 +13,7 @@ export default defineConfig({
         "**/*.z3",
     ],
     base: "https://fortyseven.github.io/zllm/",
+    server: {
+        host: "0",
+    },
 });

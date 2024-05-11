@@ -37,15 +37,17 @@
     });
 
     function* story_print(text) {
-        if (text) {
-            local_buffer += text;
-        } else {
-            $buffered_output = local_buffer;
+        if (text === "") {
+            $buffered_output = ""; // ugly hack
+            $buffered_output = local_buffer.replaceAll(">", "");
+
             $output += local_buffer;
             local_buffer = "";
             setTimeout(() => {
                 outputEl.scrollTop = outputEl.scrollHeight;
             }, 50);
+        } else {
+            local_buffer += text;
         }
     }
 
@@ -85,7 +87,7 @@
         color: #fb0;
         font-family: monospace;
         font-size: 13pt;
-        height: 600px;
+        height: 400px;
         overflow-y: scroll;
         line-height: 1.1em;
         padding: 0.75em;
@@ -93,6 +95,8 @@
         white-space: pre-wrap;
         margin: auto;
         box-shadow: 0 0 30px #0004;
+        margin-bottom: 1em;
+        scroll-behavior: smooth;
     }
 
     pre::after {
