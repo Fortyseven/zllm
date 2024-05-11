@@ -84,13 +84,15 @@
         background-color: rgb(0, 0, 0);
         color: #fb0;
         font-family: monospace;
-        font-size: 16pt;
+        font-size: 13pt;
         height: 600px;
         overflow-y: scroll;
-        padding: 1em;
+        line-height: 1.1em;
+        padding: 0.75em;
         text-align: left;
         white-space: pre-wrap;
-        width: 100%;
+        margin: auto;
+        box-shadow: 0 0 30px #0004;
     }
 
     pre::after {
