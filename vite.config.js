@@ -12,4 +12,5 @@ export default defineConfig({
         "**/*.webp",
         "**/*.z3",
     ],
+    base: "https://fortyseven.github.io/zllm/",
 });
